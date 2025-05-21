@@ -1,7 +1,7 @@
 import numpy as np
 
-def zeroPadding(img, pad):
-    paddedImg = np.pad(img, pad_width=2, mode='constant', constant_values=0)
+def reflectPadding(img, pad):
+    paddedImg = np.pad(img, ((pad, pad), (pad, pad), (0, 0)), mode='reflect')
     return paddedImg
 
 # h(j) = h + 2(padding)

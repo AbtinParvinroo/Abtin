@@ -22,12 +22,12 @@ def rgb2hsv(rgb):
     v = maxc
     hsv = np.stack([h, s, v], axis=-1)
     return hsv
-# 👇 فقط از matplotlib برای خوندن عکس استفاده می‌کنیم
+
 img_rgb = plt.imread("your_image.jpg").astype(np.float32)
 if img_rgb.max() > 1.0:
     img_rgb = img_rgb / 255.0
 img_hsv = rgb2hsv(img_rgb)
-# 🎨 رنگ‌های هدف در HSV
+
 target_colors_hsv = np.array([
     [0.0, 1.0, 1.0],
     [30/360, 1.0, 1.0],
@@ -40,7 +40,6 @@ target_colors_hsv = np.array([
     [0.0, 0.0, 1.0],
 ], dtype=np.float32)
 
-# 🔄 پیدا کردن نزدیک‌ترین رنگ
 flat_img = img_hsv.reshape(-1, 3)
 distances = np.linalg.norm(flat_img[:, None] - target_colors_hsv[None, :], axis=2)
 labels = np.argmin(distances, axis=1)
