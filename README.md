@@ -1,7 +1,3 @@
-You got it! Here's the `README.md` for your AbtinCNN library, written in English:
-
----
-
 ## AbtinCNN: A Custom CNN Library in NumPy
 
 This repository contains a collection of Python modules implemented with NumPy, aiming to build a custom and powerful **Convolutional Neural Network (CNN)** library. This library focuses on innovative approaches in image processing, content-aware weighting, adaptive activation functions, and dynamic loss optimization.
